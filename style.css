@@ -1,0 +1,58 @@
+body{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+#miniwar{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 80px;
+} 
+
+#mini{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+}
+
+#war{
+    display: inline-block;
+    color: rgb(139, 24, 24);
+}
+
+#botoes{
+    color: white;
+    font-size: 45px;
+    background-color: rgb(39, 68, 39);
+    border-radius: 10px;
+    border: 0;
+    padding: 10px 60px;
+}
+
+button{
+    color: azure;
+    font-size: 60px;
+    background-color: rgb(59, 55, 55);
+    border-radius: 10px;
+    border: 0;
+    padding: 10px 60px;
+}
+
+button{
+    margin: 65px;
+}
+
+button:hover, .active {
+    background-color:#ff0000;
+}
+
+#downbar{
+    color: rgb(161, 161, 161);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background-color: rgb(59, 55, 55);
+    bottom: 0%;
+    position: fixed;
+    text-align: center;
+    width: 99.5%;
+}
