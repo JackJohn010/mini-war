@@ -56,3 +56,14 @@ button:hover, .active {
     text-align: center;
     width: 99.5%;
 }
+
+canvas {
+    border: 1px solid black;
+}
+
+.tank {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: green;
+}
