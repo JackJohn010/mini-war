@@ -37,30 +37,30 @@ document.addEventListener("keydown", function(event) {
         
         //Controle Player 1
         case 37: // Esquerda
-            tank1.x -= 15;
+            tank2.x -= 15;
             break;
         case 39: // Direita
-            tank1.x += 15;
+            tank2.x += 15;
             break;
         case 38: // Cima
-            tank1.y += -15;
+            tank2.y += -15;
             break;
         case 40: // Baixo
-            tank1.y += 15;
+            tank2.y += 15;
             break;
 
         //Controle Player 2
         case 65: // A
-            tank2.x -= 15;
+            tank1.x -= 15;
             break;
         case 68: // D
-            tank2.x += 15;
+            tank1.x += 15;
             break;
         case 87: // W
-            tank2.y += -15;
+            tank1.y += -15;
             break;
         case 83: // S
-            tank2.y += 15;
+            tank1.y += 15;
             break;
     }
 });
@@ -162,3 +162,50 @@ function intersects(rect1, rect2) {
 // Verifica as colisões a cada 10 milissegundos
 setInterval(checkCollisions, 10);
 
+function checkCollisions() {
+    if (intersects(tank1, tank2)) {
+        // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
+        alert("Game over! Os tanks se sobreporam.");
+        restartGame();
+    }
+    
+    // Verifica se o tanque 1 foi atingido
+    projectiles.forEach(function(projectile) {
+        if (intersects(tank1, projectile)) {
+            // Se o tanque 1 foi atingido, o jogo acaba e o tanque 2 vence
+            alert("Game over! Tank 2 wins.");
+            restartGame();
+        }
+    });
+    
+    // Verifica se o tanque 2 foi atingido
+    projectiles.forEach(function(projectile) {
+        if (intersects(tank2, projectile)) {
+            // Se o tanque 2 foi atingido, o jogo acaba e o tanque 1 vence
+            alert("Game over! Tank 1 wins.");
+            restartGame();
+        }
+    });
+}
+
+function restartGame() {
+    // Reinicia a posição dos tanques
+    tank1.x = 50;
+    tank1.y = canvas.height - 480;
+    tank2.x = canvas.width - 100;
+    tank2.y = canvas.height - 80;
+    
+    // Limpa a lista de balas
+    bullets = [];
+    
+    // Remove o alerta de game over, caso exista
+    var alerts = document.querySelectorAll(".alert");
+    for (var i = 0; i < alerts.length; i++) {
+        alerts[i].remove();
+    }
+    
+    // Reinicia o jogo
+    setInterval(update, 10);
+    setInterval(updateBullets, 10);
+    setInterval(checkCollisions, 10);
+}
