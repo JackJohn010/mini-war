@@ -1,20 +1,24 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
+//Dimensões do canva
+canvas.width = 800;
+canvas.height = 500;
+
 // Define os tanques e suas posições iniciais
 var tank1 = {
     x: 50,
-    y: canvas.height - 50,
-    width: 50,
-    height: 30,
-    color: "green"
+    y: canvas.height - 480,
+    width: 60,
+    height: 50,
+    color: "darkblue"
 };
 
 var tank2 = {
     x: canvas.width - 100,
-    y: canvas.height - 50,
-    width: 50,
-    height: 30,
+    y: canvas.height - 80,
+    width: 60,
+    height: 50,
     color: "red"
 };
 
@@ -122,13 +126,6 @@ function updateBullets() {
 
 setInterval(updateBullets, 10);
 
-// // Adiciona a lógica para detectar quando um tanque é atingido
-// function checkCollisions() {
-//     if (intersects(tank1, tank2)) {
-//         // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
-//         alert("Empate os Tamques colidiram");
-//     }
-// }
 
 function checkCollisions() {
     if (intersects(tank1, tank2)) {
@@ -164,3 +161,4 @@ function intersects(rect1, rect2) {
 
 // Verifica as colisões a cada 10 milissegundos
 setInterval(checkCollisions, 10);
+

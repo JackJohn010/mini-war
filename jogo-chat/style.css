@@ -4,6 +4,16 @@
     height: 30px;
     background-color: rgb(12, 126, 12);
 }
-.tank1 {
-    border-radius: 500px;
+canvas {
+    display: block;
+    background-color: rgb(192, 189, 24);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: px;
 }
+body {
+    background-color: dimgrey;
+}
+
