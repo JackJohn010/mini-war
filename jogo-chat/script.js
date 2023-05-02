@@ -122,13 +122,37 @@ function updateBullets() {
 
 setInterval(updateBullets, 10);
 
-// Adiciona a lógica para detectar quando um tanque é atingido
+// // Adiciona a lógica para detectar quando um tanque é atingido
+// function checkCollisions() {
+//     if (intersects(tank1, tank2)) {
+//         // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
+//         alert("Empate os Tamques colidiram");
+//     }
+// }
+
 function checkCollisions() {
     if (intersects(tank1, tank2)) {
         // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
-        alert("Empate os Tamques colidiram");
+        alert("Game over! Os tanks se sobreporam.");
     }
+    
+    // Verifica se o tanque 1 foi atingido
+    projectiles.forEach(function(projectile) {
+        if (intersects(tank1, projectile)) {
+            // Se o tanque 1 foi atingido, o jogo acaba e o tanque 2 vence
+            alert("Game over! Tank 2 wins.");
+        }
+    });
+    
+    // Verifica se o tanque 2 foi atingido
+    projectiles.forEach(function(projectile) {
+        if (intersects(tank2, projectile)) {
+            // Se o tanque 2 foi atingido, o jogo acaba e o tanque 1 vence
+            alert("Game over! Tank 1 wins.");
+        }
+    });
 }
+
 
 // Verifica se dois retângulos se sobrepõem
 function intersects(rect1, rect2) {
