@@ -181,10 +181,9 @@ function intersects(rect1, rect2) {
              rect2.y + rect2.height < rect1.y);
 }
 
+// Verifica as colisões a cada 200 milissegundos
+setInterval(checkCollisions, 200);
 
-
-// Verifica as colisões a cada 300 milissegundos
-setInterval(checkCollisions, 300);
 
 function restartGame() {
     // Reinicia a posição dos tanques
