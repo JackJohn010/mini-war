@@ -52,11 +52,13 @@ body {
 #mini{
     display: inline-block;
     color: rgb(255, 255, 255);
+    font-size: 35px;
 }
 
 #war{
     display: inline-block;
     color: rgb(139, 24, 24);
+    font-size: 35px;
 }
 
 #botoes{

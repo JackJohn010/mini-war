@@ -12,13 +12,13 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 //Dimensões do canva
-canvas.width = 800;
-canvas.height = 500;
+canvas.width = 700;
+canvas.height = 400;
 
 // Define os tanques e suas posições iniciais
 var tank1 = {
     x: 50,
-    y: canvas.height - 480,
+    y: canvas.height - 375,
     width: 60,
     height: 50,
     color: "darkblue"
@@ -116,11 +116,11 @@ document.addEventListener("keydown", function(event) {
     switch(event.keyCode) {
         case 32: // Barra de espaço
             // Cria uma bala na posição do tanque que atirou com uma velocidade para cima
-            bullets.push(new Bullet(tank1.x + tank1.width / 2, tank1.y - 5, {x: 10, y: 1}));
+            bullets.push(new Bullet(tank1.x + tank1.width / 2, tank1.y - 8, {x: 10, y: 1}));
             break;
         case 13: // Enter
             // Cria uma bala na posição do tanque que atirou com uma velocidade para baixo
-            bullets.push(new Bullet(tank2.x + tank2.width / 2, tank2.y + tank2.height + 5, {x: -10, y: 1}));
+            bullets.push(new Bullet(tank2.x + tank2.width / 2, tank2.y + tank2.height + 8, {x: -10, y: 1}));
             break;
     }
 });
@@ -136,26 +136,38 @@ function updateBullets() {
 
 setInterval(updateBullets, 10);
 
-
 function checkCollisions() {
     if (intersects(tank1, tank2)) {
         // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
         alert("Game over! Os tanks se sobreporam.");
+        restartGame();
     }
     
     // Verifica se o tanque 1 foi atingido
-    projectiles.forEach(function(projectile) {
-        if (intersects(tank1, projectile)) {
+    bullets.forEach(function(bullet) {
+        if (intersects(tank1, {
+            x: bullet.x - 50,
+            y: bullet.y - 480,
+            width: 60,
+            height: 50
+        })) {
             // Se o tanque 1 foi atingido, o jogo acaba e o tanque 2 vence
             alert("Game over! Tank 2 wins.");
+            restartGame();
         }
     });
     
     // Verifica se o tanque 2 foi atingido
-    projectiles.forEach(function(projectile) {
-        if (intersects(tank2, projectile)) {
+    bullets.forEach(function(bullet) {
+        if (intersects(tank2, {
+            x: bullet.x - 100,
+            y: bullet.y - 80,
+            width: 60,
+            height: 50
+        })) {
             // Se o tanque 2 foi atingido, o jogo acaba e o tanque 1 vence
             alert("Game over! Tank 1 wins.");
+            restartGame();
         }
     });
 }
@@ -163,11 +175,13 @@ function checkCollisions() {
 
 // Verifica se dois retângulos se sobrepõem
 function intersects(rect1, rect2) {
-    return !(rect1.x + rect1.width < rect2.x || 
-             rect2.x + rect2.width < rect1.x || 
+    return !(rect1.x + rect1.width < rect2.x ||
+             rect2.x + rect2.width < rect1.x ||
              rect1.y + rect1.height < rect2.y ||
              rect2.y + rect2.height < rect1.y);
 }
+
+
 
 // Verifica as colisões a cada 300 milissegundos
 setInterval(checkCollisions, 300);
@@ -175,7 +189,7 @@ setInterval(checkCollisions, 300);
 function restartGame() {
     // Reinicia a posição dos tanques
     tank1.x = 50;
-    tank1.y = canvas.height - 480;
+    tank1.y = canvas.height - 375;
     tank2.x = canvas.width - 100;
     tank2.y = canvas.height - 80;
     
