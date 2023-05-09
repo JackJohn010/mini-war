@@ -172,32 +172,6 @@ function intersects(rect1, rect2) {
 // Verifica as colisões a cada 300 milissegundos
 setInterval(checkCollisions, 300);
 
-function checkCollisions() {
-    if (intersects(tank1, tank2)) {
-        // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
-        alert("Game over! Os tanks se sobreporam.");
-        restartGame();
-    }
-    
-    // Verifica se o tanque 1 foi atingido
-    projectiles.forEach(function(projectile) {
-        if (intersects(tank1, projectile)) {
-            // Se o tanque 1 foi atingido, o jogo acaba e o tanque 2 vence
-            alert("Game over! Tank 2 wins.");
-            restartGame();
-        }
-    });
-    
-    // Verifica se o tanque 2 foi atingido
-    projectiles.forEach(function(projectile) {
-        if (intersects(tank2, projectile)) {
-            // Se o tanque 2 foi atingido, o jogo acaba e o tanque 1 vence
-            alert("Game over! Tank 1 wins.");
-            restartGame();
-        }
-    });
-}
-
 function restartGame() {
     // Reinicia a posição dos tanques
     tank1.x = 50;

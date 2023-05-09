@@ -88,6 +88,7 @@ button:hover, .active {
     height: 30px;
     background-color: rgb(12, 126, 12);
 }
+
 canvas {
     border: 3px solid black;
     border-radius: 40px;
