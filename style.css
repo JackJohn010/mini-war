@@ -22,6 +22,7 @@ body {
     font-size: 30px;
     margin-top: 0;
     color: #fff;
+    text-align: center;
 }
 
 .popup ul {
@@ -45,26 +46,26 @@ body {
     font-weight: 550;
 }
 
-#miniwar{
+#miniwar {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-size: 50px;
 } 
 
-#mini{
+#mini {
     display: inline-block;
     color: rgb(255, 255, 255);
     font-size: 25px;
 }
 
-#war{
+#war {
     display: inline-block;
-    color: rgb(139, 24, 24);
+    color: rgb(219, 18, 18);
     font-size: 25px;
 }
 
-#botoes{
+#botoes {
     color: white;
     font-size: 45px;
     background-color: rgb(39, 68, 39);
@@ -73,7 +74,7 @@ body {
     padding: 10px 60px;
 }
 
-button{
+button {
     color: azure;
     font-size: 25px;
     background-color: rgb(59, 55, 55);
@@ -104,4 +105,8 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     margin-top: px;
+}
+
+#creditos {
+    margin-top: 80px;
 }
