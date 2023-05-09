@@ -10,7 +10,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(88, 222, 255);
+    background-color: rgb(11, 0, 110);
     padding: 20px;
     max-width: 400px;
     z-index: 1;
@@ -19,27 +19,30 @@ body {
 }
 
 .popup h2 {
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 0;
+    color: #fff;
 }
 
 .popup ul {
     margin: 0;
-    padding: 0;
+    padding: 2px;
     list-style: none;
-    font-size: 32px;
+    font-size: 25px;
     line-height: 1.5;
+    color: #fff;
 }
 
 .popup button {
     display: block;
     margin: 20px auto 0;
     padding: 10px 20px;
-    background-color: #00158b;
-    color: #fff;
+    background-color: #07fde9;
+    color: #000000;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: 550;
 }
 
 #miniwar{
@@ -52,13 +55,13 @@ body {
 #mini{
     display: inline-block;
     color: rgb(255, 255, 255);
-    font-size: 35px;
+    font-size: 25px;
 }
 
 #war{
     display: inline-block;
     color: rgb(139, 24, 24);
-    font-size: 35px;
+    font-size: 25px;
 }
 
 #botoes{
@@ -72,12 +75,12 @@ body {
 
 button{
     color: azure;
-    font-size: 30px;
+    font-size: 25px;
     background-color: rgb(59, 55, 55);
     border-radius: 10px;
     border: 0;
-    padding: 10px 60px;
-    margin: 45px;
+    padding: 5px 30px;
+    margin-top: 10px;
 }
 
 button:hover, .active {
@@ -88,14 +91,14 @@ button:hover, .active {
     position: absolute;
     width: 50px;
     height: 30px;
-    background-color: rgb(12, 126, 12);
+    background-color: rgb(126, 12, 12);
 }
 
 canvas {
     border: 3px solid black;
     border-radius: 40px;
     display: block;
-    background-color: rgb(192, 189, 24);
+    background-color: rgb(223, 162, 31);
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;

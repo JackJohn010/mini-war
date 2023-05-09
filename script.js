@@ -120,7 +120,7 @@ document.addEventListener("keydown", function(event) {
             break;
         case 13: // Enter
             // Cria uma bala na posição do tanque que atirou com uma velocidade para baixo
-            bullets.push(new Bullet(tank2.x + tank2.width / 2, tank2.y + tank2.height + 8, {x: -10, y: 1}));
+            bullets.push(new Bullet(tank2.x + tank2.width / 2, tank2.y + tank2.height - 8, {x: -10, y: 1}));
             break;
     }
 });
@@ -147,7 +147,7 @@ function checkCollisions() {
     bullets.forEach(function(bullet) {
         if (intersects(tank1, {
             x: bullet.x - 50,
-            y: bullet.y - 480,
+            y: bullet.y - 375,
             width: 60,
             height: 50
         })) {
@@ -196,11 +196,11 @@ function restartGame() {
     // Limpa a lista de balas
     bullets = [];
     
-    // Remove o alerta de game over, caso exista
-    var alerts = document.querySelectorAll(".alert");
-    for (var i = 0; i < alerts.length; i++) {
-        alerts[i].remove();
-    }
+    // // Remove o alerta de game over, caso exista
+    // var alerts = document.querySelectorAll(".alert");
+    // for (var i = 0; i < alerts.length; i++) {
+    //     alerts[i].remove();
+    // }
     
     // Reinicia o jogo
     setInterval(update, 10);
