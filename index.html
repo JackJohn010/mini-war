@@ -11,7 +11,7 @@
         <!-- Tela incial -->
         <div id="home">
             <div id="imgs">
-                <img class="img" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/283000/4c5fd5bf5a5844110f72713f4bb9129ea20633c5.jpg" width="600" height="400">
+                <img class="img" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/283000/4c5fd5bf5a5844110f72713f4bb9129ea20633c5.jpg" width="500" height="300">
             </div>
             <div id="miniwar">
                 <div id="mini">
@@ -21,20 +21,22 @@
                     <h1>WAR</h1>
                 </div>
             </div>
-                <div id="iniciar">
-                    <button id="start-button" type="">INICIAR</button>
-                </div>
-                <div id="creditos">
-                    <button type="submit">CRÉDITOS</button>
-                </div>
+            <div class="popup" id="popup">
+                <h2>Créditos</h2>
+                <ul>
+                    <li>Johnny - JavaScript</li>
+                    <li>William - JavaScript</li>
+                    <li>Eduardo - HTML e CSS</li>
+                    <li>Thiago - Designer</li>
+                </ul>
+                <button onclick="closePopup()">Fechar</button>
+            </div>
             <canvas id="canvas"></canvas>
             <script src="script.js"></script>
-            
-            <div id="downbar">
-                <p>Desenvolvido por JETW Games Studio 3° B</p>
+
+            <div id="creditos">
+                <button onclick="openPopup()" type="submit">CRÉDITOS</button>
             </div>
-        </div>
-        <!-- Corpo do Jogo -->
-        
+        </div>        
     </body>
 </html>

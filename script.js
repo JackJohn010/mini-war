@@ -1,3 +1,13 @@
+//Abrir e Fechar o Popup
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// pegar elemento canvas
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
@@ -110,7 +120,7 @@ document.addEventListener("keydown", function(event) {
             break;
         case 13: // Enter
             // Cria uma bala na posição do tanque que atirou com uma velocidade para baixo
-            bullets.push(new Bullet(tank2.x + tank2.width / 2, tank2.y + tank2.height + 5, {x: -10, y: -1}));
+            bullets.push(new Bullet(tank2.x + tank2.width / 2, tank2.y + tank2.height + 5, {x: -10, y: 1}));
             break;
     }
 });
@@ -159,8 +169,8 @@ function intersects(rect1, rect2) {
              rect2.y + rect2.height < rect1.y);
 }
 
-// Verifica as colisões a cada 10 milissegundos
-setInterval(checkCollisions, 10);
+// Verifica as colisões a cada 300 milissegundos
+setInterval(checkCollisions, 300);
 
 function checkCollisions() {
     if (intersects(tank1, tank2)) {
@@ -209,9 +219,3 @@ function restartGame() {
     setInterval(updateBullets, 10);
     setInterval(checkCollisions, 10);
 }
-
-// inciar jogo
-const startButton = document.getElementById("start-button");
-startButton.addEventListener("click", iniciarJogo);
-
-iniciarJogo();
