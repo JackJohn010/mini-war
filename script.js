@@ -139,7 +139,7 @@ setInterval(updateBullets, 10);
 function checkCollisions() {
     if (intersects(tank1, tank2)) {
         // Se os tanques se sobrepõem, o jogo acaba e o tanque atingido perde
-        alert("Game over! Os tanks se sobreporam.");
+        alert("Game over! Os tanques se sobreporam.");
         restartGame();
     }
     
@@ -152,7 +152,7 @@ function checkCollisions() {
             height: 50
         })) {
             // Se o tanque 1 foi atingido, o jogo acaba e o tanque 2 vence
-            alert("Game over! Tank 2 wins.");
+            alert("Game over! Tanque 2 venceu.");
             restartGame();
         }
     });
@@ -166,7 +166,7 @@ function checkCollisions() {
             height: 50
         })) {
             // Se o tanque 2 foi atingido, o jogo acaba e o tanque 1 vence
-            alert("Game over! Tank 1 wins.");
+            alert("Game over! Tanque 1 venceu.");
             restartGame();
         }
     });
